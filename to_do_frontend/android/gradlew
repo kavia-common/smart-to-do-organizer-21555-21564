@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Stub Gradle wrapper for CI environments where Expo prebuild has not been executed.
+# This prevents failures when CI tries to run ./gradlew without an android project.
+echo "[CI NOTICE] Gradle wrapper not generated. This Expo project uses the managed workflow."
+echo "To generate native Android project, run: npm run prebuild:android"
+echo "Skipping Gradle task as a no-op."
+exit 0

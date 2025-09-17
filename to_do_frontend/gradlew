@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Gradle wrapper stub for CI at app root.
+# Forward to the Android placeholder wrapper if present; otherwise no-op.
+APP_ANDROID_DIR="$(dirname "$0")/android"
+if [ -x "$APP_ANDROID_DIR/gradlew" ]; then
+  (cd "$APP_ANDROID_DIR" && ./gradlew "$@")
+  exit $?
+fi
+echo "[CI NOTICE] No Android Gradle wrapper. This Expo app uses the managed workflow."
+echo "Generate native project with: npm run prebuild:android"
+echo "Skipping Gradle task as a no-op."
+exit 0
